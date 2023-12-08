@@ -4,12 +4,11 @@ import (
 	"fmt"
 	"io"
 	"io/fs"
-	"io/ioutil"
 	"os"
 )
 
 func OpenText(path string) (string, error) {
-	filebuffer, err := ioutil.ReadFile(path)
+	filebuffer, err := os.ReadFile(path)
 	if err != nil {
 		return "", err
 	}

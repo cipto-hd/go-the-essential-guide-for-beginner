@@ -4,7 +4,6 @@ import (
 	"errors"
 	"fmt"
 	"io/fs"
-	"io/ioutil"
 	"os"
 )
 
@@ -15,7 +14,7 @@ DESCRIPTION
 
 Reads the content on a directory and returns `FileInfo` array and a possible error, if dir can't be read.
 
-PARAMS
+# PARAMS
 
 path:string, a string representing the path holding a directory
 
@@ -28,10 +27,9 @@ EXAMPLE
 	for _, file := range files {
 		fmt.Println(file.Name())
 	}
-
 */
-func ReadDir(path string) ([]fs.FileInfo, error) {
-	files, err := ioutil.ReadDir(path)
+func ReadDir(path string) ([]fs.DirEntry, error) {
+	files, err := os.ReadDir(path)
 	if err != nil {
 		return nil, err
 	}

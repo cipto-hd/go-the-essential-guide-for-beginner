@@ -3,19 +3,20 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
+	"log"
+	"os"
+
 	"iohelper/dir"
 	"iohelper/file"
-	"log"
 )
 
 type Products struct {
-	Products []Product `json: products`
+	Products []Product `json:"products"`
 }
 
 type Product struct {
-	Id   int    `json: "id"`
-	Name string `json: "name"`
+	Id   int    `json:"id"`
+	Name string `json:"name"`
 }
 
 // writes JSON to file
@@ -23,7 +24,7 @@ type Product struct {
 
 // reads JSON from file
 func OpenJson() {
-	file, _ := ioutil.ReadFile("products.json")
+	file, _ := os.ReadFile("products.json")
 
 	data := Products{}
 
