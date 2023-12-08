@@ -47,3 +47,7 @@ I welcome contributions on:
 - Spelling
 - Suggestions on better formatting
 - I hope I hear from you. :)
+
+## Credits
+
+[Chris Noring](https://github.com/softchris), the original author
